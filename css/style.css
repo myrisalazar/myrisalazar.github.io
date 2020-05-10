@@ -6,3 +6,6 @@ background-image: linear-gradient(90deg, #f174ff 0%, #ff0f60 100%);
 #img{
     border-radius: 20%;
 }
+html{
+    scroll-behavior: smooth;
+}
