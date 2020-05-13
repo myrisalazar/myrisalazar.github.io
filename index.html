@@ -9,6 +9,7 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/7d6e6ea07c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/7d6e6ea07c.js" crossorigin="anonymous"></script>
     <!-- agregar metas -->
 </head>
 
@@ -294,7 +295,35 @@
         </article>
         <h2 class="display-4 text-center my-4" id="contacto">Contacto</h2>
         <article>
-            
+            <form class="shadow p-3 mb-5 bg-white rounded">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="lead">Nombre*</label>
+                            <input class="form-control" type="text" placeholder="Ingrese su nombre y apellido">
+                        </div>
+                        <div class="form-group">
+                            <label class="lead">Teléfono*</label>
+                            <input class="form-control" type="tel" placeholder="Escriba su número">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="lead">Email*</label>
+                            <input class="form-control" type="email" placeholder="ejemplo@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="lead">País*</label>
+                            <input class="form-control" type="text" placeholder="Escriba su país">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="lead">No dudes en dejarnos tu consulta*</label>
+                    <textarea rows="5" placeholder="Agregue aquí su consulta" class="form-control"></textarea>
+                </div>
+                <button type="submit" class="btn fondo text-light contactarme">CONTACTARME</button>
+            </form>
         </article>
     </section>
     <footer class="bg-dark text-light py-4">
