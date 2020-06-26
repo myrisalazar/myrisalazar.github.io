@@ -12,6 +12,12 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/7d6e6ea07c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_xr5RIRYXunYQfS9NLVPuM");
+        })();
+    </script>
 </head>
 
 <body>
@@ -295,13 +301,13 @@
         </article>
         <h2 class="display-4 text-center my-4" id="contacto">Contacto</h2>
         <article>
-            <form class="shadow p-3 mb-5 bg-white rounded">
+            <form onsubmit="validarCompleto(event)" class="shadow p-3 mb-5 bg-white rounded">
                 <div class="row">
                     <div class="col-sm-12 col-md-6 col-lg-6">
                         <div class="form-group">
                             <label class="lead">Nombre</label>
                             <input class="form-control" type="text" placeholder="Ingrese su nombre y apellido"
-                                onblur="campoRequerido(this)">
+                                id="nombre" onblur="campoRequerido(this)">
                             <div class="valid-feedback">
                                 Campo completo
                             </div>
@@ -311,7 +317,7 @@
                         </div>
                         <div class="form-group">
                             <label class="lead">Teléfono</label>
-                            <input class="form-control" type="tel" placeholder="Escriba su número"
+                            <input class="form-control" type="tel" placeholder="Escriba su número" id="numero"
                                 onblur="validarTelefono(this)">
                             <div class="invalid-feedback">
                                 Campo incorrecto
@@ -321,15 +327,16 @@
                     <div class="col-sm-12 col-md-6 col-lg-6">
                         <div class="form-group">
                             <label class="lead">Email</label>
-                            <input class="form-control" type="email" placeholder="ejemplo@gmail.com"
+                            <input class="form-control" type="email" placeholder="ejemplo@gmail.com" id="email"
                                 onblur="validarMail(this)">
-                                <div class="invalid-feedback">
-                                    Campo incorrecto
-                                </div>
+                            <div class="invalid-feedback">
+                                Campo incorrecto
+                            </div>
                         </div>
                         <div class="form-group my-2">
                             <label class="lead">País</label>
-                            <input class="form-control" type="text" placeholder="Escriba su país" onblur="validarPais(this)">
+                            <input class="form-control" type="text" placeholder="Escriba su país" id="pais"
+                                onblur="validarPais(this)">
                             <div class="invalid-feedback">
                                 Campo incompleto
                             </div>
@@ -338,7 +345,8 @@
                 </div>
                 <div class="form-group">
                     <label class="lead">No dudes en dejarnos tu consulta</label>
-                    <textarea rows="5" placeholder="Agregue aquí su consulta" onblur="validarConsulta(this)" class="form-control"></textarea>
+                    <textarea rows="5" placeholder="Agregue aquí su consulta" id="consulta"
+                        onblur="validarConsulta(this)" class="form-control"></textarea>
                     <div class="invalid-feedback">
                         Escribir mínimo 15 caracteres
                     </div>
