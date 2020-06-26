@@ -47,23 +47,23 @@ function validarConsulta(consult) {
 
 function validarCompleto(event) {
     event.preventDefault();
-    console.log("Dentro de Validar completo");
 
     if (campoRequerido(document.getElementById("nombre")) && validarTelefono(document.getElementById("numero")) && validarMail(document.getElementById("email")) && validarPais(document.getElementById("pais")) && validarConsulta(document.getElementById("consulta"))
     ) {
-        enviarMail();
+        enviarMail(this);
     } else {
         alert("No pudimos enviar tu correo, hay un error");
     }
+
 }
 
 function enviarMail() {
-    var template_params = {
-        "from_name": "from_name_value",
-        "message_html": `Mensaje: ${document.getElementById("consulta").value} - Email ${document.getElementById("email").value}`
+    let template_params = {
+        from_name: document.getElementById("nombre").value,
+        message_html: `Mensaje: ${document.getElementById("consulta").value} - Email ${document.getElementById("email").value}`
     }
 
-    var service_id = "default_service";
-    var template_id = "template_WsYqydVn";
+    let service_id = "default_service";
+    let template_id = "template_WsYqydVn";
     emailjs.send(service_id, template_id, template_params);
 }
